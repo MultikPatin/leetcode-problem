@@ -11,12 +11,10 @@ def tester(
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(__name__)
 
-    solution = solution()
-
-    task = getattr(solution, task_name, None)
+    task = getattr(solution(), task_name, None)
     if task is None:
         attrs = [n for n in solution.__dict__ if not n.startswith("__")]
-        msg = f"Task {task_name} not found in {attrs} class"
+        msg = f"Task '{task_name}' not found in class methods: {attrs}"
         raise AttributeError(msg)
 
     func_args = inspect.getfullargspec(task).args
