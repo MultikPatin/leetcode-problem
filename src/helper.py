@@ -1,6 +1,12 @@
 import inspect
 import logging
 from collections.abc import Callable, Iterable, Mapping, Sequence
+from enum import StrEnum, auto
+
+
+class Fields(StrEnum):
+    args = auto()
+    expd = auto()
 
 
 def tester(
@@ -21,17 +27,18 @@ def tester(
     func_args.remove("self")
 
     for i, data in enumerate(test_data, start=1):
-        result = task(*data["args"])
+        result = task(*data[Fields.args])
+        title = f"Test {i} |"
 
         logger.info(
-            "Test %s. Input:  %s",
-            i,
-            dict(zip(func_args, data["args"], strict=True)),
+            "%s Input:  %s",
+            title,
+            dict(zip(func_args, data[Fields.args], strict=True)),
         )
-        logger.info("Test %s. Output: %s", i, data["expected"])
-        logger.info("Test %s. Result: %s", i, result)
+        logger.info("%s Output: %s", title, data[Fields.expd])
+        logger.info("%s Result: %s", title, result)
 
-        if result != data["expected"]:
-            logger.info("Test %s. ==== FAILED with result: %s", i, result)
+        if result != data[Fields.expd]:
+            logger.info("======== FAILED")
         else:
-            logger.info("Test %s. ==== PASSED", i)
+            logger.info("======== PASSED")
