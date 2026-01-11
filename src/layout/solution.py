@@ -1,9 +1,9 @@
-from src.helper import tester
+from src.helper import Fields, tester
 
 test_data = [
-    {"args": [5], "expected": 5},
-    {"args": [5], "expected": 5},
-    {"args": [5], "expected": 5},
+    {Fields.args: (5,), Fields.expd: 5},
+    {Fields.args: (5,), Fields.expd: 5},
+    {Fields.args: (5,), Fields.expd: 5},
 ]
 
 
