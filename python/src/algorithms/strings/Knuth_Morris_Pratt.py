@@ -51,6 +51,10 @@ test_data = [
         Fields.expd: -1,
     },
     {
+        Fields.args: ("s", ""),
+        Fields.expd: -1,
+    },
+    {
         Fields.args: ("abababab", "abab"),
         Fields.expd: 0,
     },
@@ -79,18 +83,24 @@ test_data = [
 
 class Solution:
     def search_index(self, data: str, sub: str) -> int:  # noqa: N802
+        if data == "" or sub == "":
+            return -1
+
+        n = len(data)
+        m = len(sub)
+
         p = [0] * len(sub)
+
         j = 0
         i = 1
 
         # Составляем массив смещений на основание префиксов и суффиксов
-        while i < len(sub):
+        while i < m:
             if sub[i] == sub[j]:
                 p[i] = j + 1
                 i += 1
                 j += 1
             elif j == 0:
-                p[i] = 0
                 i += 1
             else:
                 j = p[j - 1]
@@ -98,16 +108,17 @@ class Solution:
         j = 0
         i = 0
 
-        while i < len(data):
+        while i < n:
             if data[i] == sub[j]:
                 i += 1
                 j += 1
-                if j == len(sub):
-                    return i - len(sub)
+                if j == m:
+                    return i - m
             elif j > 0:
                 j = p[j - 1]
             else:
                 i += 1
+
         return -1
 
 

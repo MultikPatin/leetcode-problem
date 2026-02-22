@@ -26,19 +26,33 @@ def tester(
     func_args = inspect.getfullargspec(task).args
     func_args.remove("self")
 
+    fails = []
     for i, data in enumerate(test_data, start=1):
         result = task(*data[Fields.args])
         title = f"Test {i} |"
+        in_data = dict(zip(func_args, data[Fields.args], strict=True))
+        out_data = data[Fields.expd]
 
-        logger.info(
-            "%s Input:  %s",
-            title,
-            dict(zip(func_args, data[Fields.args], strict=True)),
-        )
-        logger.info("%s Output: %s", title, data[Fields.expd])
+        logger.info("%s Input:  %s", title, in_data)
+        logger.info("%s Output: %s", title, out_data)
         logger.info("%s Result: %s", title, result)
 
         if result != data[Fields.expd]:
             logger.info("======== FAILED")
+            fails.append(
+                {"title": title, "in": in_data, "out": out_data, "res": result}
+            )
         else:
             logger.info("======== PASSED")
+
+    if not fails:
+        logger.info("All tests PASSED! ")
+        return
+
+    logger.error("==========================================================")
+    logger.error("Some tests FAILED!")
+    for fail in fails:
+        logger.error(fail["title"])
+        logger.error("Input:  %s", fail["in"])
+        logger.error("Output: %s", fail["out"])
+        logger.error("Result: %s", fail["res"])
