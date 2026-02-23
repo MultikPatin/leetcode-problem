@@ -88,9 +88,7 @@ class Solution:
 
         n = len(data)
         m = len(sub)
-
-        p = [0] * len(sub)
-
+        p = [0] * m
         j = 0
         i = 1
 
