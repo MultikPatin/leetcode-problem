@@ -1,4 +1,4 @@
-from python.src.helper import Fields, tester
+from src.helper import Fields, tester
 
 
 class ListNode:

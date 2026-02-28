@@ -1,4 +1,4 @@
-from python.src.helper import Fields, tester
+from src.helper import Fields, tester
 
 test_data = [
     {Fields.args: ("A man, a plan, a canal: Panama",), Fields.expd: True},

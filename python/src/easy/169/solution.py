@@ -1,6 +1,6 @@
 from collections import Counter
 
-from python.src.helper import Fields, tester
+from src.helper import Fields, tester
 
 test_data = [
     {Fields.args: ([3, 2, 3],), Fields.expd: 3},

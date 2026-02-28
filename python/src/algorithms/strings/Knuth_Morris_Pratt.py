@@ -4,7 +4,7 @@
 # Алгоритм Кнута-Морриса-Пратта используется
 # для поиска подстроки (образца) в строке.
 # O(n+m)
-from python.src.helper import Fields, tester
+from src.helper import Fields, tester
 
 test_data = [
     {
