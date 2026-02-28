@@ -13,4 +13,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    tester(solution=Solution, task_name="task", test_data=test_data)
+    solution = Solution()
+    tester(func=solution.task, test_data=test_data)

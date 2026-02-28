@@ -30,4 +30,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-    tester(solution=Solution, task_name="romanToInt", test_data=test_data)
+    solution = Solution()
+    tester(func=solution.romanToInt, test_data=test_data)

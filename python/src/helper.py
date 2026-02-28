@@ -2,6 +2,10 @@ import inspect
 import logging
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from enum import StrEnum, auto
+from typing import Any
+
+PLACEHOLDER1 = "=========="
+PLACEHOLDER2 = "----------"
 
 
 class Fields(StrEnum):
@@ -9,50 +13,34 @@ class Fields(StrEnum):
     expd = auto()
 
 
-def tester(
-    solution: Callable,
-    task_name: str,
-    test_data: Sequence[Mapping[str, Iterable]],
-) -> None:
+def tester(func: Callable, test_data: Sequence[Mapping[str, Iterable]]) -> None:
     logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
-
-    task = getattr(solution(), task_name, None)
-    if task is None:
-        attrs = [n for n in solution.__dict__ if not n.startswith("__")]
-        msg = f"Task '{task_name}' not found in class methods: {attrs}"
-        raise AttributeError(msg)
-
-    func_args = inspect.getfullargspec(task).args
-    func_args.remove("self")
+    logger = logging.getLogger(" | " + func.__name__ + " | ")
 
     fails = []
     for i, data in enumerate(test_data, start=1):
-        result = task(*data[Fields.args])
-        title = f"Test {i} |"
-        in_data = dict(zip(func_args, data[Fields.args], strict=True))
-        out_data = data[Fields.expd]
+        args = data[Fields.args]
+        expected = data[Fields.expd]
+        result = func(*args)
 
-        logger.info("%s Input:  %s", title, in_data)
-        logger.info("%s Output: %s", title, out_data)
-        logger.info("%s Result: %s", title, result)
+        logger.info("%s Test %s", PLACEHOLDER1, i)
+        logger.info("Arguments: %s", _arguments(func, args))
+        logger.info("Expected:  %s", expected)
+        logger.info("Result:    %s", result)
 
         if result != data[Fields.expd]:
-            logger.info("======== FAILED")
-            fails.append(
-                {"title": title, "in": in_data, "out": out_data, "res": result}
-            )
+            fails.append(i)
+            logger.info("%s FAILED", PLACEHOLDER2)
         else:
-            logger.info("======== PASSED")
+            logger.info("%s PASSED", PLACEHOLDER2)
 
     if not fails:
-        logger.info("All tests PASSED! ")
-        return
+        logger.info(" ALL TESTS PASSED")
+    else:
+        logger.info("%s %s tests FAILS", PLACEHOLDER1, len(fails))
 
-    logger.error("==========================================================")
-    logger.error("Some tests FAILED!")
-    for fail in fails:
-        logger.error(fail["title"])
-        logger.error("Input:  %s", fail["in"])
-        logger.error("Output: %s", fail["out"])
-        logger.error("Result: %s", fail["res"])
+
+def _arguments(func: Callable, data: Iterable) -> dict[Any, Any]:
+    args = inspect.getfullargspec(func).args
+    args.remove("self")
+    return dict(zip(args, data, strict=True))
