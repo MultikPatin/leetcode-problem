@@ -1,9 +1,5 @@
-# Алгоритм Кнута-Морриса-Пратта используется
-# для поиска подстроки (образца) в строке.
-# O(n+m)
-# Алгоритм Кнута-Морриса-Пратта используется
-# для поиска подстроки (образца) в строке.
-# O(n+m)
+# Алгоритм Бойера-Мура-Хорспула
+
 from src.helper import Fields, tester
 
 test_data = [
@@ -80,22 +76,19 @@ test_data = [
     },
 ]
 
+PLACEHOLDER = "*"
 
-def calculate_offsets(sub: str) -> tuple[list[int], int]:
+
+def calculate_offsets(sub: str) -> tuple[dict[str, int], int]:
     m = len(sub)
-    p = [0] * m
-    j = 0
-    i = 1
+    p = {PLACEHOLDER: m}
 
-    while i < m:
-        if sub[i] == sub[j]:
-            p[i] = j + 1
-            i += 1
-            j += 1
-        elif j == 0:
-            i += 1
-        else:
-            j = p[j - 1]
+    for i in range(m - 2, -1, -1):  # итерации с предпоследнего символа
+        if sub[i] not in p:  # если символ еще не добавлен в таблицу
+            p[sub[i]] = m - i - 1
+
+    if sub[m - 1] not in p:  # отдельно формируем последний символ
+        p[sub[m - 1]] = m
 
     return p, m
 
@@ -106,19 +99,30 @@ class Solution:
             return -1
 
         offsets, sub_length = calculate_offsets(sub)
-        j = 0
-        i = 0
+        n = len(data)
 
-        while i < len(data):
-            if data[i] == sub[j]:
-                i += 1
-                j += 1
-                if j == sub_length:
-                    return i - sub_length
-            elif j > 0:
-                j = offsets[j - 1]
-            else:
-                i += 1
+        if n < sub_length:
+            return -1
+
+        i = sub_length - 1  # счетчик проверяемого символа в строке
+
+        while i < n:
+            k = 0
+
+            for j in range(sub_length - 1, -1, -1):
+                if data[i - k] != sub[j]:
+                    if j == sub_length - 1:
+                        off = offsets[data[i]] if offsets.get(data[i]) else offsets[PLACEHOLDER]
+                    else:
+                        off = offsets[sub[j]]  # смещение, если не равен не последний символ образа
+
+                    i += off  # смещение счетчика строки
+                    break
+
+                k += 1  # смещение для сравниваемого символа в строке
+
+            if k == sub_length:
+                return i - k + 1
 
         return -1
 
