@@ -13,7 +13,9 @@ class Fields(StrEnum):
     expd = auto()
 
 
-def tester(func: Callable, test_data: Sequence[Mapping[str, Iterable]]) -> None:
+def tester(
+    func: Callable, test_data: Sequence[Mapping[Fields, Iterable]]
+) -> None:
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(" | " + func.__name__ + " | ")
 
