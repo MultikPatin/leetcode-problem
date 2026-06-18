@@ -1,4 +1,5 @@
 from typing import Self
+from unittest.util import _MAX_LENGTH
 
 
 class Node:
@@ -23,11 +24,13 @@ class Node:
 
 
 class LinkedList:
+    _head: Node
+
     def __init__(self) -> None:
-        self._count = 0
+        self._length = 0
 
     def __len__(self) -> int:
-        return self._count
+        return self._length
 
     def __iter__(self) -> Self:
         self._current = self._head
@@ -63,7 +66,7 @@ class LinkedList:
             self._head = Node(value, None)
         else:
             node.next = Node(value, None)
-        self._count += 1
+        self._length += 1
 
     def insert(self, index: int, value: str) -> None:
         if index < 0 or index > len(self):
@@ -75,7 +78,7 @@ class LinkedList:
             node = self.get_node(index - 1)
             if node is not None:
                 node.next = Node(value, node.next)
-        self._count += 1
+        self._length += 1
 
     def remove(self, index: int) -> None:
         if index < 0 or index >= len(self):
@@ -90,7 +93,7 @@ class LinkedList:
                 next_node = node.next
                 if next_node is not None:
                     node.next = next_node.next
-        self._count -= 1
+        self._length -= 1
 
 
 if __name__ == "__main__":
