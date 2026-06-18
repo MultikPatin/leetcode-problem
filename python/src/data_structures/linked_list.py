@@ -1,5 +1,4 @@
 from typing import Self
-from unittest.util import _MAX_LENGTH
 
 
 class Node:
@@ -86,7 +85,7 @@ class LinkedList:
 
         if index == 0:
             if self._head is not None:
-                self._head = self._head.next
+                self._head = self._head.next  # ty:ignore[invalid-assignment]
         else:
             node = self.get_node(index - 1)
             if node is not None:
@@ -101,22 +100,22 @@ if __name__ == "__main__":
     linked_list.append("first")
     linked_list.append("second")
     linked_list.append("third")
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.insert(1, "1node")
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.remove(1)
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.insert(3, "3node")
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.remove(3)
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.insert(4, "4node")
-    print(linked_list)
+    print(linked_list)  # noqa: T201
 
     linked_list.remove(4)
-    print(linked_list)
+    print(linked_list)  # noqa: T201
