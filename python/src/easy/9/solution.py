@@ -8,19 +8,29 @@ test_data = [
 
 
 class Solution:
+    # def isPalindrome(self, x: int) -> bool:  # noqa: N802
+    #     if x <= 10:
+    #         return False
+    #     numbers = [num for num in str(x)]
+    #     r = 0
+    #     l = len(numbers) - 1
+    #     while l > r:
+    #         if numbers[r] == numbers[l]:
+    #             r += 1
+    #             l -= 1
+    #         else:
+    #             return False
+    #     return True
+
     def isPalindrome(self, x: int) -> bool:  # noqa: N802
-        if x <= 10:
+        if x < 0:
             return False
-        numbers = [num for num in str(x)]
-        r = 0
-        l = len(numbers) - 1
-        while l > r:
-            if numbers[r] == numbers[l]:
-                r += 1
-                l -= 1
-            else:
-                return False
-        return True
+        origin = x
+        rev = 0
+        while x > 0:
+            rev = rev * 10 + x % 10
+            x //= 10
+        return rev == origin
 
 
 if __name__ == "__main__":
