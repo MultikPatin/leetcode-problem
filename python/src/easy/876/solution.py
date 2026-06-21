@@ -6,17 +6,11 @@ class ListNode:
 
 class Solution:
     def middleNode(self, head: ListNode | None) -> ListNode | None:  # noqa: N802
-        length = 0
+        fast = head
+        slow = head
 
-        curr = head
-        while curr.next is not None:
-            curr = curr.next
-            length += 1
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
-        del_idx = length // 2 if length % 2 == 0 else length // 2 + 1
-
-        curr = head
-        for i in range(del_idx):
-            curr = curr.next
-
-        return curr
+        return slow

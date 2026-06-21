@@ -3,22 +3,30 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
     def isPalindrome(self, head: ListNode | None) -> bool:  # noqa: N802
-        rev_head = None
-        length = 0
+        # 876
+        fast = head
+        slow = head
 
-        curr = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        # 206
+        prev = None
+        curr = slow
         while curr:
             tmp = curr
             curr = curr.next
-            rev_head = ListNode(tmp.val, rev_head)
-            length += 1
+            tmp.next = prev
+            prev = tmp
 
-        for _ in range(length // 2):
-            if head.val != rev_head.val:
+        while head and prev:
+            if head.val != prev.val:
                 return False
             head = head.next
-            rev_head = rev_head.next
+            prev = prev.next
 
         return True
