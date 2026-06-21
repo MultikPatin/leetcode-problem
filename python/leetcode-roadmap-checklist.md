@@ -136,7 +136,7 @@
   easy)
 - [ ] [Linked list cycle](https://leetcode.com/problems/linked-list-cycle?envType=problem-list-v2&envId=linked-list) (
   easy)
-- [ ] [Merge two linked lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=problem-list-v2&envId=linked-list) (
+- [x] [Merge two sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=problem-list-v2&envId=linked-list) (
   easy)
 - [x] [Reverse linked list](https://leetcode.com/problems/reverse-linked-list/?envType=problem-list-v2&envId=linked-list) (
   easy)
