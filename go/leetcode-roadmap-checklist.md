@@ -9,19 +9,19 @@
 
 ## 📚 Два указателя (12 задач)
 
-- [x] [Reverse string](https://leetcode.com/problems/reverse-string/description/?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Reverse string](https://leetcode.com/problems/reverse-string/description/?envType=problem-list-v2&envId=two-pointers) (
   easy)
-- [x] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/description/?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/description/?envType=problem-list-v2&envId=two-pointers) (
   easy)
-- [x] [Merge sorted array](https://leetcode.com/problems/merge-sorted-array?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Merge sorted array](https://leetcode.com/problems/merge-sorted-array?envType=problem-list-v2&envId=two-pointers) (
   easy)
-- [x] [Intersection of two arrays](https://leetcode.com/problems/intersection-of-two-arrays/description/) (easy)
-- [x] [Squares of sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Intersection of two arrays](https://leetcode.com/problems/intersection-of-two-arrays/description/) (easy)
+- [ ] [Squares of sorted array](https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=two-pointers) (
   easy)
-- [x] [Remove duplicate from sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Remove duplicate from sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/?envType=problem-list-v2&envId=two-pointers) (
   easy)
-- [x] [Move zeroes](https://leetcode.com/problems/move-zeroes/?envType=problem-list-v2&envId=two-pointers) (easy)
-- [x] [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=problem-list-v2&envId=two-pointers) (
+- [ ] [Move zeroes](https://leetcode.com/problems/move-zeroes/?envType=problem-list-v2&envId=two-pointers) (easy)
+- [ ] [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/?envType=problem-list-v2&envId=two-pointers) (
   medium)
 - [ ] [3Sum](https://leetcode.com/problems/3sum/description/?envType=problem-list-v2&envId=two-pointers) (medium)
 - [ ] [String compression](https://leetcode.com/problems/string-compression/description/?envType=problem-list-v2&envId=two-pointers) (
@@ -48,10 +48,10 @@
 
 ## 📦 Хеш-таблицы (5 задач)
 
-- [x] [Two sum](https://leetcode.com/problems/two-sum/?envType=problem-list-v2&envId=hash-table) (easy)
-- [x] [Isomorphic strings](https://leetcode.com/problems/isomorphic-strings/description/?envType=problem-list-v2&envId=hash-table) (
+- [ ] [Two sum](https://leetcode.com/problems/two-sum/?envType=problem-list-v2&envId=hash-table) (easy)
+- [ ] [Isomorphic strings](https://leetcode.com/problems/isomorphic-strings/description/?envType=problem-list-v2&envId=hash-table) (
   easy)
-- [x] [Roman to integer](https://leetcode.com/problems/roman-to-integer/description/?envType=problem-list-v2&envId=hash-table) (
+- [ ] [Roman to integer](https://leetcode.com/problems/roman-to-integer/description/?envType=problem-list-v2&envId=hash-table) (
   easy)
 - [ ] [Valid anagram](https://leetcode.com/problems/valid-anagram/?envType=problem-list-v2&envId=hash-table) (easy)
 - [ ] [Group anagrams](https://leetcode.com/problems/group-anagrams/?envType=problem-list-v2&envId=hash-table) (medium)
@@ -132,7 +132,7 @@
 
 ## 🔗 Связные списки (8 задач)
 
-- [x] [Middle of the linked list](https://leetcode.com/problems/middle-of-the-linked-list?envType=problem-list-v2&envId=linked-list) (
+- [ ] [Middle of the linked list](https://leetcode.com/problems/middle-of-the-linked-list?envType=problem-list-v2&envId=linked-list) (
   easy)
 - [ ] [Linked list cycle](https://leetcode.com/problems/linked-list-cycle?envType=problem-list-v2&envId=linked-list) (
   easy)
