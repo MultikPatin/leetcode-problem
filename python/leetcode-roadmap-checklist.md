@@ -138,7 +138,7 @@
   easy)
 - [ ] [Merge two linked lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=problem-list-v2&envId=linked-list) (
   easy)
-- [ ] [Reverse linked list](https://leetcode.com/problems/reverse-linked-list/?envType=problem-list-v2&envId=linked-list) (
+- [x] [Reverse linked list](https://leetcode.com/problems/reverse-linked-list/?envType=problem-list-v2&envId=linked-list) (
   easy)
 - [ ] [Palindrome linked list](https://leetcode.com/problems/palindrome-linked-list?envType=problem-list-v2&envId=linked-list) (
   easy)
