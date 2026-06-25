@@ -53,7 +53,7 @@
   easy)
 - [x] [Roman to integer](https://leetcode.com/problems/roman-to-integer/description/?envType=problem-list-v2&envId=hash-table) (
   easy)
-- [ ] [Valid anagram](https://leetcode.com/problems/valid-anagram/?envType=problem-list-v2&envId=hash-table) (easy)
+- [x] [Valid anagram](https://leetcode.com/problems/valid-anagram/?envType=problem-list-v2&envId=hash-table) (easy)
 - [ ] [Group anagrams](https://leetcode.com/problems/group-anagrams/?envType=problem-list-v2&envId=hash-table) (medium)
 
 ---
@@ -170,7 +170,7 @@
 
 ## 📦 Стеки и очереди (9 задач)
 
-- [ ] [Implement queue using stacks](https://leetcode.com/problems/implement-queue-using-stacks?envType=problem-list-v2&envId=stack) (
+- [x] [Implement queue using stacks](https://leetcode.com/problems/implement-queue-using-stacks?envType=problem-list-v2&envId=stack) (
   easy)
 - [ ] [Implement stack using queues](https://leetcode.com/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) (
   easy)
