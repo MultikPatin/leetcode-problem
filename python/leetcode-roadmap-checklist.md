@@ -142,7 +142,7 @@
   easy)
 - [x] [Palindrome linked list](https://leetcode.com/problems/palindrome-linked-list?envType=problem-list-v2&envId=linked-list) (
   easy)
-- [ ] [Intersection two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/?envType=problem-list-v2&envId=linked-list) (
+- [x] [Intersection two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/?envType=problem-list-v2&envId=linked-list) (
   easy)
 - [ ] [Delete node in a linked list](https://leetcode.com/problems/delete-node-in-a-linked-list?envType=problem-list-v2&envId=linked-list) (
   medium)
