@@ -134,7 +134,7 @@
 
 - [x] [Middle of the linked list](https://leetcode.com/problems/middle-of-the-linked-list?envType=problem-list-v2&envId=linked-list) (
   easy)
-- [ ] [Linked list cycle](https://leetcode.com/problems/linked-list-cycle?envType=problem-list-v2&envId=linked-list) (
+- [x] [Linked list cycle](https://leetcode.com/problems/linked-list-cycle?envType=problem-list-v2&envId=linked-list) (
   easy)
 - [x] [Merge two sorted linked lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=problem-list-v2&envId=linked-list) (
   easy)
