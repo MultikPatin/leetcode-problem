@@ -1,4 +1,4 @@
-package main
+package queues
 
 type RingBufferQueue struct {
 	queue []any
