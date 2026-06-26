@@ -172,9 +172,9 @@
 
 - [x] [Implement queue using stacks](https://leetcode.com/problems/implement-queue-using-stacks?envType=problem-list-v2&envId=stack) (
   easy)
-- [ ] [Implement stack using queues](https://leetcode.com/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) (
+- [x] [Implement stack using queues](https://leetcode.com/problems/implement-stack-using-queues/description/?envType=problem-list-v2&envId=stack) (
   easy)
-- [ ] [Valid parentheses](https://leetcode.com/problems/valid-parentheses/) (easy)
+- [x] [Valid parentheses](https://leetcode.com/problems/valid-parentheses/) (easy)
 - [ ] [Score of parentheses](https://leetcode.com/problems/score-of-parentheses/description/) (medium)
 - [ ] [Minimum add to make parentheses valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/) (
   medium)
