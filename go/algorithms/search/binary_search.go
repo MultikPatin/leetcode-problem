@@ -1,5 +1,8 @@
 package search
 
+// Временная сложность: O(log n)
+// Отсортированный массив делится пополам на каждой итерации
+
 func binarySearch(arr []int, x int, left int, right int) int {
 	if right <= left {
 		// промежуток пуст
