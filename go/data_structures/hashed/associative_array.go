@@ -3,15 +3,15 @@ package hashed
 // Наивная реализация ассоциативного массива
 
 type Pair struct {
-	key   interface{}
-	value interface{}
+	key   string
+	value any
 }
 
 type Map struct {
 	pairs []Pair
 }
 
-func (m *Map) Get(key interface{}) interface{} {
+func (m *Map) Get(key string) any {
 	for _, pair := range m.pairs {
 		if pair.key == key {
 			return pair.value
@@ -20,7 +20,7 @@ func (m *Map) Get(key interface{}) interface{} {
 	return nil // Если пара не найдена, вернем null
 }
 
-func (m *Map) Set(key interface{}, value interface{}) {
+func (m *Map) Set(key string, value any) {
 	for i, pair := range m.pairs {
 		if pair.key == key {
 			m.pairs[i].value = value
