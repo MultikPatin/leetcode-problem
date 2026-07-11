@@ -1,3 +1,11 @@
+def rotate_sub_array(arr: list[int], i: int, j: int) -> None:
+    j -= 1
+    while i < j:
+        arr[i], arr[j] = arr[j], arr[i]
+        i += 1
+        j -= 1
+
+
 # Prefix Sum
 
 
