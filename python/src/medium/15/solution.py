@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 from src.helper import Fields, tester
 
 test_data = [
@@ -17,45 +15,52 @@ test_data = [
 
 
 class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:  # noqa: N802
+        res = []
+        nums.sort()
+
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+
+            j = i + 1
+            k = len(nums) - 1
+
+            while j < k:
+                total = nums[i] + nums[j] + nums[k]
+
+                if total > 0:
+                    k -= 1
+                elif total < 0:
+                    j += 1
+                else:
+                    res.append([nums[i], nums[j], nums[k]])
+                    j += 1
+
+                    while nums[j] == nums[j - 1] and j < k:
+                        j += 1
+
+        return res
+
     # def threeSum(self, nums: list[int]) -> list[list[int]]:  # noqa: N802
     #     pos = defaultdict(list)
     #     for i, num in enumerate(nums):
     #         pos[num].append(i)
-    #     print(pos)
     #
-    #     triples = set()
+    #     cache = set()
+    #     triples = []
     #
     #     nums.sort()
     #     for i in range(len(nums)):
     #         for j in range(i + 1, len(nums)):
     #             target = 0 - nums[i] - nums[j]
-    #             if target in pos:
+    #             if target in cache:
     #                 idx_list = pos[target] + pos[nums[i]] + pos[nums[j]]
-    #                 unique = set(idx_list)
-    #                 print(unique)
-    #                 if len(unique) >= 3:
-    #                     triples.add((target, nums[i], nums[j]))
-    #     return [list(t) for t in triples]
-
-    def threeSum(self, nums: list[int]) -> list[list[int]]:  # noqa: N802
-        pos = defaultdict(list)
-        for i, num in enumerate(nums):
-            pos[num].append(i)
-
-        cache = set()
-        triples = []
-
-        nums.sort()
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                target = 0 - nums[i] - nums[j]
-                if target in cache:
-                    idx_list = pos[target] + pos[nums[i]] + pos[nums[j]]
-                    if len(set(idx_list)) >= 3:
-                        triples.append((target, nums[i], nums[j]))
-                cache.add(nums[i])
-
-        return [list(t) for t in set(triples)]
+    #                 if len(set(idx_list)) >= 3:
+    #                     triples.append((target, nums[i], nums[j]))
+    #             cache.add(nums[i])
+    #
+    #     return [list(t) for t in set(triples)]
 
 
 if __name__ == "__main__":
