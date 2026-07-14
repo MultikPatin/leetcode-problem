@@ -36,20 +36,20 @@ func outgoingEdges(v int) []int {
 func DFS(v int) { // v - номер вершины
 	// time += 1 // При входе в вершину время (номер шага) увеличивается.
 	//    entry[v] = &time // Запишем время входа.
-	color[v] = "gray" // Вершина посещена, но ещё не обработана.
+	dag_color[v] = "gray" // Вершина посещена, но ещё не обработана.
 	for _, w := range outgoingEdges(v) {
-		if color[w] == "white" { // Если вершина не посещена, то
+		if dag_color[w] == "white" { // Если вершина не посещена, то
 			DFS(w) // запустим обход от найденной смежной вершины.
 		}
 	}
 	// time += 1 // Перед выходом из вершины время снова обновляется.
 	//    leave[v] = &time // Запишем время выхода.
-	color[v] = "black" // Теперь вершина обработана.
+	dag_color[v] = "black" // Теперь вершина обработана.
 }
 
 func MainDFS() {
-	for i := range color {
-		if color[i] == "white" {
+	for i := range dag_color {
+		if dag_color[i] == "white" {
 			DFS(i) // Запускаем обход, стартуя с i-й вершины.
 		}
 	}
