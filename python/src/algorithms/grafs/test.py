@@ -1,8 +1,8 @@
-from collections.abc import Generator, Mapping
+from collections.abc import Generator, MutableMapping
 from dataclasses import dataclass, field
 from enum import Enum
 
-type GraphType = Mapping[Vertex, set[Edge]]
+type GraphType = MutableMapping[Vertex, set[Edge]]
 
 
 class VertexColor(Enum):
